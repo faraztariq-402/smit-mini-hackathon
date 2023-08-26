@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(245, 241, 241);
+}
+#allFrom{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.owner{
+    font-size: 1.8rem;
+    color: blue;
+    margin: 0.7rem 0;
+}
+
+
+.ownerAndTime{
+    display: block;
+}
+span{
+    color: gray;
+    font-size: 0.8rem;
+}
+.postCard{
+    margin: 1rem 0 ;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    min-height: 11rem;
+
+}
+.photoAndTitle{
+    display: flex;
+    gap: 0.3rem;
+}
+.image{
+    height: 3rem;
+    width: 3rem;
+    background-color: darkgray;
+    border: 2px solid gray;
+}
+.main{
+    display: flex;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    height: 3rem;
+}
+#userPosts{
+    display: flex;
+    gap: 2rem;
+}
+.sideContainer{
+    margin-top: 0.9rem;
+}
+#backToAllBlogs{
+    margin-left: 2rem;
+}
+.logoutLink{
+    cursor: pointer;
+}
+p{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+.userInformation{
+    height: 100vh;
+    margin-top: 2rem;
+    width: 80%;
+    margin: auto;
+}
+.logoutLink{
+    text-decoration: none;
+    color: white;
+}
+#backToAllBlogs{
+    color: #643ad8;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+.dashboardHeading{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    
+    background-color: #f8f9fa;
+
+}
+@media screen and (max-width:500px) {
+    #userPosts{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

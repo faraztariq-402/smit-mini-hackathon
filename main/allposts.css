@@ -1,0 +1,71 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#allBlogsPara{
+    position: relative;
+    top: 0.5rem;
+    width: 80%;
+    margin: auto;
+}
+.dashboardHeading{
+    background-color: #f8f9fa;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+#welcome{
+    margin-left: 3.3rem;
+}
+body{
+    background-color: rgb(245, 241, 241);
+}
+.header{
+  display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: blue;
+color: white  
+}
+.myPara{
+    margin-top: 0.8rem;
+}
+.postNameTime{
+    margin-left: 0.5rem;
+}
+.postNameTime span{
+    font-size: 0.8rem;
+    color: gray;
+}
+.logoutLink{
+    cursor: pointer;
+}
+.seeMore{
+    color: #7748F8;
+    cursor: pointer;
+}
+#allPosts{
+    width: 80%;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.photo{
+    height: 4.5rem;
+    width: 4.9rem;
+}
+.photoAndTitle{
+    display: flex;
+}
+.postCard{
+    word-wrap: break-word;
+    margin-top: 1rem;
+    /* border: 1px solid gray; */
+    padding: 1rem;
+    background-color: #f8f9fa;
+   
+}

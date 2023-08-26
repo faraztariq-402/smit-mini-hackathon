@@ -1,0 +1,82 @@
+body{
+   
+    background-color: rgb(167, 137, 196);
+}
+.mainContainer{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+svg{
+    position: relative;
+    right: 28px;
+    cursor: pointer;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    color: white;
+}
+.swal2-confirm, .swal2-style{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.myButton{
+  
+  
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+} 
+label{
+    position: relative;
+    top: 15px;
+}
+a{
+text-decoration: none;
+color: rgb(110, 103, 153);
+}
+
+input{
+    height: 1.6rem;
+    border-radius: 4px;
+    border: 1px solid rgb(182, 170, 170);
+width: 11.5rem;
+}
+.or{
+    display: flex;
+    align-items: center;
+}
+svg{
+    margin-left: 0.4rem;
+}
+.myInput{
+    display: flex;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+.or span{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+hr{
+    width: 100%;
+}
+#userLogin{
+    padding: 1.3rem;
+    border-radius: 6px;
+    background-color: white;
+}
+button{
+    border: 1px solid  rgb(202, 143, 153);
+    width: 11.8rem;
+    background-color: rgb(216, 127, 145);
+    height: 1.9rem;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+}

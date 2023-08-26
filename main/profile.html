@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="header">
+        <h2 class="heading">Personal Blogging App</h2>
+        <div class="userAndLogout">
+        <span style="color: aquamarine; margin-right: 2.5rem;" id="userSpan">User 123</span>
+        <a id="logout" class="logoutLink">Logout</a>
+        
+        </div>
+    </div>
+    <div class="profileHeading">
+    <h1>Profile</h1>
+    <!-- <a href="./allposts.html" style="text-decoration: none;">See All Blogs</h1> -->
+        <span  style="text-decoration: none;" id="mySpan">See All Blogs</span>
+        <span id="dashboard">Dashboard</span>
+
+
+
+</div>
+
+
+<div class="completeProfile">
+    <div class="allItems">
+    <div class="image">
+        
+       <img src="" alt="" id="profilePhoto">
+       <svg id="changePhoto" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+            <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+          </svg>
+      
+    </div>
+    <div class="profileName"> 
+    <h3 style="color: black;" id="profileName"></h3><svg id="changeName" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+      </svg></div>
+    <h3 style="color: black;">Password</h3>
+    <input type="file" id="fileInput">
+ <!--<button id="changePhoto">Change Photo</button> -->
+    <div class="inputs"><input type="text" placeholder="Old Password" id="oldPassword"><br><br>
+    <input type="text" placeholder="New Password" id="newPassword"><br><br>
+    <input type="text" placeholder="Repeat Password" id="repeatPassword"><br></div>
+<button type="submit" id="UpdatePassword">Update Password</button>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
