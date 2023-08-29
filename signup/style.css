@@ -8,11 +8,12 @@
     display: flex;
     text-align: center;
 }
-svg{
-    position: relative;
-    right: 28px;
+/* svg{
+    position: absolute;
+    right: 28px; 
+    left: 56%; 
     cursor: pointer;
-}
+} */
 .myButton{
     
     margin-bottom: 0.8rem;
@@ -25,8 +26,9 @@ svg{
     display: flex;
     color: white;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: blue;
+    
 }
 .myInput{
     display: flex;
@@ -44,15 +46,17 @@ svg{
 .mainContainer{
      display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* align-items: center; */
+    /* height: 100vh; */
 }
 body{
    
-    background-color: rgb(167, 137, 196)
+    background-color:rgb(245, 241, 241);
 }
 .myContainer{
-    background-color: white;
+    background-color: #f8f9fa;
+    margin-top: 10rem;
+
     padding: 1.3rem;
     padding-left: 2.6rem;
     padding-right: 2.6rem;
@@ -68,14 +72,20 @@ svg{
 }
 input{
     height: 1.7rem;
-    width: 12.5rem;
+    width: 100%;
     border-radius: 6px;
     border: 1px solid rgb(194, 177, 177);
     padding: 0.2rem;
 }
-.signupPassword{
-    display: flex;
-    align-items: center;
+.signupPassword {
+    position: relative;
+}
+.password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 a{
     text-decoration: none;
@@ -86,9 +96,9 @@ a{
 }
 button{
     border: 1px solid  rgb(202, 143, 153);
-    width: 12.4rem;
+    width: 100%;
     margin-top: 0.4rem;
-    background-color: rgb(216, 127, 145);
+    background-color: rgb(8, 8, 146);
     height: 1.9rem;
     border-radius: 6px;
     color: white;
@@ -100,4 +110,10 @@ button{
 }
 hr{
     width: 100%;
+}
+@media screen and (max-width:420px) {
+    .header{
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
 }

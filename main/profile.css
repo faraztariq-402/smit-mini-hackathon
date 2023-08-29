@@ -13,7 +13,7 @@
     bottom: 1rem;
 }
 body{
-   background-color: #f8f9fa;
+    background-color:rgb(245, 241, 241);
 }
 #changePhoto{
     position: relative;
@@ -26,22 +26,84 @@ body{
     gap: 0.7rem;
     margin-top: 1rem;
 }
+
 .logoutLink{
     cursor: pointer;
+    font-size: 1.1rem;
+    color: white;
+}
+.userAndLogout{
+    display: flex;
+    align-items: center;
+}
+.login{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
 }
 .profileHeading{
     display: flex;
-    justify-content: space-between;
-margin-top: 1rem;
+    height: 3rem;
+    padding: 0 3rem;
+    align-items: center;
+    /* justify-content: space-between; */
+background-color: #f8f9fa;
+
 }
-h1{
-    margin-left: 1rem;
+#UpdatePassword{
+    background-color: rgb(8, 8, 146);
+}
+.heading{
+    font-size: 1.3rem;
+    margin-bottom: 0.1rem;
 }
 #mySpan{
     margin-right: 1rem;
     color: blue;
     cursor: pointer;
     font-size: 1.5rem;
+}
+.allBlogsPage:hover{
+    background-color: white;
+}
+.profilePage:hover{
+    background-color: white;
+}
+.logoutPage:hover{
+    background-color: white;
+}
+
+.threeDots{
+    position: relative;
+}
+.threeDots svg{
+    color: white;
+    position: relative;
+bottom: 0.2rem;
+
+}
+.abc{
+    margin: 0.5rem;
+}
+.redirection{
+    border: 2px solid rgb(0, 0, 0);
+    /* height: 3rem; */
+    text-align: center;
+font-size: 1.1rem;
+background-color: rgb(245, 241, 241);
+   
+    /* margin: 0.5rem; */
+    padding: 0rem 0.6rem;
+            position: absolute;
+        border-radius: 5px;
+        top: 2.1rem; /* Adjust as needed */
+        right: 0%; /* This centers the element horizontally */
+        /* transform: translateX(-50%); Correct the horizontal centering */
+
+        
+}
+.redirection a{
+    color: rgb(0, 0, 0);
 }
 #fileInput{
     display: block;
@@ -51,15 +113,20 @@ h1{
 }
 svg{
     color: blue;
+    
     cursor: pointer;
 }
 .profileHeading a{
     font-size: 1.3rem;
     margin-right: 1rem;
 }
+#userSpan{
+    color: white;
+    font-size: 1.1rem;
+}
 .header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: blue;
     color: white;
@@ -82,6 +149,7 @@ h1{
 input{
     margin-top: 0.3rem;
     height: 1.8rem;
+    width: 10rem;
     border-radius: 5px;
     border: 1px solid rgb(182, 160, 160);
 }
@@ -93,7 +161,7 @@ input{
    margin-left: 2rem;
     width: 70%;
     margin-top: 4rem;
-    background-color:rgb(245, 241, 241);
+    background-color: #f8f9fa;
     color: white;
 }
 button{
@@ -102,7 +170,7 @@ button{
     /* width: 9rem; */
     /* height: 1.7rem; */
     font-size: 1.1rem;
-    padding:0.3rem 0.7rem;
+    padding:0.2rem 0.7rem;
     border-radius: 5px;
 }
 .image{
@@ -113,4 +181,40 @@ button{
     background-color: darkgray;
     border: 1px solid gray;
     /* background-color: white; */
+}
+.logoutPage{
+    cursor: pointer;
+}
+@media screen and (max-width:600px) {
+    .logoutPage{
+        display: block !important;
+    } 
+    .hidingLogout{
+        display: none;
+    } 
+}
+@media screen and (max-width:450px) {
+    .completeProfile{
+        width: 79%;
+    }
+}
+@media screen and (min-width:700px){
+    .header{
+        justify-content: space-around;
+    }
+    .abc{
+        margin: 0.8rem;
+    }
+    .redirection{
+        position: absolute;
+right: -0.5rem;
+    }
+}
+@media screen and (max-width:370px) {
+    .heading{
+        font-size: 1.2rem;
+    }
+    #userSpan{
+        font-size: 1rem;
+    }
 }

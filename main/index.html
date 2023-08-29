@@ -5,26 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="allcontents">
-    <div class="redirection" style="display: none;">
-        <div class="profilePage"><a href="./profile.html" style="text-decoration: none;">Profile</a><br></div>
-        <div class="allBlogsPage"> <a href="./allposts.html" style="text-decoration: none;">All Blogs</a></div> 
-
-    </div>
+   
     <div class="header">
 <h2 class="heading">Personal Blogging App</h2>
 <div class="userAndLogout">
-<span style="color: aquamarine; margin-right: 2.5rem;" id="userSpan"></span>
-<a id="logout" class="logoutLink">Logout</a>
+<span  id="userSpan" class="abc"></span>
+<!-- <a id="logout" class="logoutLink abc hidingLogout">Logout</a> -->
+<!-- <span id="logout" class="logoutLink abc hidingLogout">Logout</span>
+ -->
+ <a id="login" class="login" style="display: none;">Login</a>
 
-<div class="svg" style="display: inline; margin-top: 0.3rem;"><svg style="margin-top: 0.3rem;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+ <a id="logout" class="logoutLink abc hidingLogout">Logout</a>
+
+<div class="svg abc mysvg" style="display: inline; "><svg  xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
     <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-  </svg></div>
+  </svg>
+  <div class="redirection">
+    <div class="profilePage"><a href="./profile.html" style="text-decoration: none;">Profile</a><br></div>
+    <div class="allBlogsPage"> <a href="./allposts.html" style="text-decoration: none;">All Blogs</a></div> 
+    <!-- <div class="logoutPage" style="display: none;"><a href="" style="text-decoration: none;" class="logoutRedirectDashboard" >Logout</a></div> -->
+    <div class="logoutPage" style="display: none;"><a class="logoutRedirect abc" style="text-decoration: none;">Logout</a></div>
+
+</div>
+</div>
 </div>
 
     </div>
@@ -48,8 +57,9 @@
        
     </div></div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     <script type="module" src="./app.js"></script>
+   
 </body>
 </html>

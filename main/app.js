@@ -23,10 +23,20 @@ const firebaseConfig = {
 let postInput = document.querySelector("#postInput");
 let postButton = document.querySelector("#postButton");
 let logout = document.querySelector("#logout");
+let login = document.querySelector("#login");
+let mysvg = document.querySelector(".mysvg");
+
+
 let userLogin = document.querySelector("#userLogin");
 let postText = document.querySelector("#postText").value;
 let userSpan = document.querySelector("#userSpan");
 let svg = document.querySelector(".svg");
+const logoutRedirect = document.querySelector(".logoutRedirect");
+const header = document.querySelector(".header");
+
+
+// const logoutRedirectDashboard = document.querySelector(".logoutRedirectDashboard");
+
 let redirection = document.querySelector(".redirection");
 redirection.style.display = 'none'
 svg.addEventListener("click", ()=>{
@@ -55,15 +65,24 @@ onAuthStateChanged(auth, (user) => {
     // allPosts.innerHTML = ""
     getAllPosts(myUser)
 
-  } else {
+  } 
+ else {
     logout.style.display = "none"
-     userLogin.style.display = "block"
+    //  userLogin.style.display = "block"
+    mysvg.style.display = 'none'
+    login.style.cursor = 'pointer'
+    header.style.padding = "0 2rem";
+    login.style.display = 'block'
+    login.addEventListener("click", ()=>{
+      window.location.href = '../index.html'
+    })
      // User is not signed in, disable post creation
      postButton.style.display = "none";
-     userLogin.addEventListener("click", ()=>{
-       window.location.href = "../index.html"
+    
+    if(user === "null" ){
+      window.location.href = "../index.html"
 
-     })
+    }
    
 
    
@@ -269,7 +288,55 @@ let getAllPosts = async () => {
 };
 
   getAllPosts();
+  // const handleSignOut = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       // Show a SweetAlert success message
+  //       Swal.fire({
+  //         icon: 'success',
+  //         title: 'Sign Out Successful',
+  //         text: 'You have been signed out successfully.',
+  //         didClose: () => {
+  //           // Redirect to index.html after SweetAlert is closed
+  //           window.location.href = "../index.html";
+  //         }
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // Show a SweetAlert error message
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Sign Out Error',
+  //         text: 'An error occurred while signing out.',
+  //       });
+  //       console.error("Error signing out: ", error);
+  //     });
+  // };
   logout.addEventListener("click", () => {
+    signOut(auth)
+    .then(() => {
+      // Show a SweetAlert success message
+      Swal.fire({
+        icon: 'success',
+        title: 'Sign Out Successful',
+        text: 'You have been signed out successfully.',
+        didClose: () => {
+          // Redirect to index.html after SweetAlert is closed
+          window.location.href = "../index.html";
+        }
+      });
+    })
+      .catch((error) => {
+        // Show a SweetAlert error message
+        Swal.fire({
+          icon: 'error',
+          title: 'Sign Out Error',
+          text: 'An error occurred while signing out.',
+        });
+        console.error("Error signing out: ", error);
+      });
+  });
+  logoutRedirect.addEventListener("click", () => {
     signOut(auth)
       .then(() => {
         Swal.fire({
@@ -290,4 +357,3 @@ let getAllPosts = async () => {
         });
       });
   });
-

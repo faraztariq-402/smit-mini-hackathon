@@ -18,6 +18,21 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user.email)
+    
+    } else {
+       
+      
+         window.location.href = "../index.html"
+  
+      
+     
+  
+     
+    }
+  });
 let logout = document.getElementById("logout")
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("userId");
@@ -92,6 +107,7 @@ let photoElement = document.createElement("img");
 photoElement.classList.add("photoElement");
 photoElement.style.height = "4.5rem";
 photoElement.style.width = "4.9rem";
+photoElement.style.borderRadius = '5px'
 photoElement.style.borderRadius = '5px';
 photoElement.src = `${postData.photoUrl}`;
 

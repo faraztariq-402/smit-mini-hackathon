@@ -10,27 +10,76 @@
     width: 80%;
     margin: auto;
 }
+.abc{
+    margin: 0.5rem;
+}
 .dashboardHeading{
     background-color: #f8f9fa;
     height: 3rem;
     display: flex;
+    padding: 1rem 2rem;
     align-items: center;
 }
 #welcome{
-    margin-left: 3.3rem;
+    margin-bottom:  0.5rem;
+    font-size: 1.5rem;
 }
+
 body{
     background-color: rgb(245, 241, 241);
 }
+#userSpan{
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+}
 .header{
   display: flex;
-justify-content: space-around;
+  height: 3.3rem;
+justify-content: space-between;
 align-items: center;
 background-color: blue;
 color: white  
 }
+.logoutPage:hover{
+    background-color: white;
+}
+.threeDots{
+    position: relative;
+}
 .myPara{
     margin-top: 0.8rem;
+}
+.threeDots svg{
+    color: white;
+    position: relative;
+bottom: 0.2rem;
+cursor: pointer;
+}
+.redirection a{
+    color: rgb(0, 0, 0);
+}
+
+.allBlogsPage:hover{
+    background-color: white;
+}
+.profilePage:hover{
+    background-color: white;
+}
+.redirection{
+    border: 2px solid rgb(0, 0, 0);
+    /* height: 3rem; */
+    text-align: center;
+    background-color: rgb(245, 241, 241);
+    /* margin: 0.5rem; */
+    padding:0.2rem 0.4rem;
+    font-size: 1.1rem;
+        position: absolute;
+        z-index: 2;
+        border-radius: 5px;
+        top: 2rem; /* Adjust as needed */
+        right: 8px;
+        /* transform: translateX(-50%); Correct the horizontal centering */
 }
 .postNameTime{
     margin-left: 0.5rem;
@@ -41,6 +90,8 @@ color: white
 }
 .logoutLink{
     cursor: pointer;
+    font-size: 1.1rem;
+    color: white;
 }
 .seeMore{
     color: #7748F8;
@@ -68,4 +119,40 @@ a{
     padding: 1rem;
     background-color: #f8f9fa;
    
+}
+h2{
+    margin-bottom: 0rem;
+}
+.heading{
+  
+    margin-left: 0.3rem;
+    font-size: 1.3rem;
+}
+@media screen and (max-width:600px) {
+    .logoutPage{
+        display: block !important;
+    }
+    .hidingLogout{
+        display: none;
+    }
+}
+@media screen and (min-width:700px){
+    .header{
+        justify-content: space-around;
+    }
+    .abc{
+        margin: 0.8rem;
+    }
+    .redirection{
+        position: absolute;
+right: -0.5rem;
+    }
+}
+@media screen and (max-width:370px) {
+    .heading{
+        font-size: 1.2rem;
+    }
+    #userSpan{
+        font-size: 1rem;
+    }
 }

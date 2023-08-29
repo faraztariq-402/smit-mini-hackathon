@@ -17,14 +17,32 @@ const firebaseConfig = {
     measurementId: "G-S7MJ8PJ3SN"
   };
   
- 
+//  let logoutRedirectDashboard = document.querySelector(".logoutRedirectDashboard")
+//  logoutRedirectDashboard.style.display = 'none'
+const logoutRedirect = document.querySelector(".logoutRedirect");
+
   let logout = document.querySelector("#logout");
 const changeName = document.getElementById("changeName")
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const storage = getStorage(app);
   const auth = getAuth(app);
-
+  let login = document.getElementById("login")
+  const redirection = document.querySelector(".redirection");
+  const threeDots = document.querySelector(".threeDots");
+  // window.addEventListener("resize", () => {
+  //   // Get the current width of the viewport
+  //   const screenWidth = window.innerWidth;
+  
+  //   // Check if the screen width is at most 600px
+  //   if (screenWidth <= 600) {
+  //     logoutRedirectDashboard.style.display = "block"; // Show the element
+  //   } else {
+  //     logoutRedirectDashboard.style.display = "none"; // Hide the element
+  //   }
+  // });
+  // Trigger the event listener once to set the initial display state
+  window.dispatchEvent(new Event("resize"));
 const oldPassword = document.querySelector("#oldPassword");
 const newPassword = document.querySelector("#newPassword");
 const repeatPassword = document.querySelector("#repeatPassword");
@@ -35,11 +53,10 @@ const userSpan = document.querySelector("#userSpan");
 let image = document.querySelector(".image")
   image.style.backgroundImage = "url('./unknown.jpg')";
   image.style.backgroundSize = 'cover'
-let mySpan = document.querySelector("#mySpan")
 let changePhoto = document.querySelector("#changePhoto")
-mySpan.addEventListener("click", ()=>{
-    window.location.href = "./allposts.html"
-})
+let header = document.querySelector(".header")
+
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user.email)
@@ -47,23 +64,39 @@ onAuthStateChanged(auth, (user) => {
       profileName.textContent = user.displayName
       profilePhoto.src = user.photoURL
     } else {
-       userLogin.style.display = "block"
+      threeDots.style.display = 'none'
+      login.style.display = 'block'
+      login.style.cursor = 'pointer'
+     header.style.padding = "0 2rem";
+      logout.style.display = 'none'
+      login.addEventListener("click", ()=>{
+        window.location.href = '../index.html'
+      })
+      console.log(user)
+      //  userLogin.style.display = "block"
        // User is not signed in, disable post creation
-       postButton.style.display = "none";
-       userLogin.addEventListener("click", ()=>{
-         window.location.href = "../index.html"
+      //  postButton.style.display = "none";
+      if(user === "null" ){
+        window.location.href = "../index.html"
+      }
   
-       })
+      
      
   
      
     }
   });
-   let dashboard = document.getElementById("dashboard")
-   dashboard.style.cursor = 'pointer'
-   dashboard.addEventListener("click", ()=>{
-    window.location.href = "./index.html"
-   })
+
+  threeDots.addEventListener("click", ()=>{
+    console.log("Three dots clicked");
+    console.log("redirection.style.display:", redirection.style.display);
+    if(redirection.style.display === 'none'){
+      redirection.style.display = 'block'
+    }else{
+      redirection.style.display = 'none'
+    }
+  })
+
    changePhoto.addEventListener("click", () => {
     const fileInput = document.getElementById("fileInput");
     fileInput.click(); // This triggers the file input click event
@@ -106,13 +139,15 @@ onAuthStateChanged(auth, (user) => {
         });
   
         console.log("Profile photo updated successfully in user's relevant posts");
+        Swal.fire("Photo Updated Successfully", "", "success");
       } catch (error) {
         console.error("Error updating profile photo:", error.message);
       }
     } else {
       console.log("No user is currently signed in or no file selected.");
     }
-  });
+  }); 
+  
   changeName.addEventListener("click", () => {
     Swal.fire({
       title: "Change Display Name",
@@ -181,21 +216,44 @@ if(newPassword.value === repeatPassword.value){
 
       // Change the user's password
       await updatePassword(user, newPasswordValue);
-alert("Password Updated Successfully")
+// alert("Password Updated Successfully")
       // Password changed successfully
+      Swal.fire("Password Updated Successfully", "", "success");
       console.log("Password changed successfully");
     } catch (error) {
+      Swal.fire("Error Updating Password, Old password might be incorrect")
       console.error("Error changing password:", error.message);
     }
   } else {
     console.log("No user is currently signed in.");
   }
 }else{
-    alert("password doesn't match")
+  Swal.fire("Passwords doesn't match");
 }
 
 });
 
+logoutRedirect.addEventListener("click", () => {
+  signOut(auth)
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Sign Out Successful',
+        text: 'You have been signed out successfully.',
+      }).then(() => {
+        console.log("User signed out successfully");
+        window.location.href = "../index.html";
+      });
+    })
+    .catch((error) => {
+      console.error("Error signing out: ", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Sign Out Error',
+        text: 'An error occurred while signing out.',
+      });
+    });
+});
 logout.addEventListener("click", () => {
     signOut(auth)
       .then(() => {

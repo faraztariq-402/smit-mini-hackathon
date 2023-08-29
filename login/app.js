@@ -28,20 +28,20 @@ let userLogin = document.querySelector("#userLogin")
 
 
 let passwordHide = document.querySelector("#passwordHide");
-let myPassword = document.querySelector(".myPassword");
+let myLoginPassword = document.querySelector(".myLoginPassword");
 
 let passwordDisplay = document.querySelector("#passwordDisplay");
 
 passwordHide.addEventListener("click", () => {
   passwordDisplay.style.display = "block";
   passwordHide.style.display = "none";
-  myPassword.type = "text";
+  myLoginPassword.type = "text";
 });
 
 passwordDisplay.addEventListener("click", () => {
   passwordHide.style.display = "block";
   passwordDisplay.style.display = "none";
-  myPassword.type = "password";
+  myLoginPassword.type = "password";
 });
 
 userLogin.addEventListener("submit", (e) => {

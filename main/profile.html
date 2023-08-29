@@ -8,20 +8,33 @@
 
     <link rel="stylesheet" href="profile.css">
 </head>
-<body>
+<body id="myBody">
     <div class="header">
-        <h2 class="heading">Personal Blogging App</h2>
-        <div class="userAndLogout">
-        <span style="color: aquamarine; margin-right: 2.5rem;" id="userSpan">User 123</span>
-        <a id="logout" class="logoutLink">Logout</a>
         
+        <h2 class="heading">Personal Blogging App</h2>
+        <div class="userAndLogout ">
+        <span  id="userSpan" class="abc"></span>
+        <a id="logout" class="logoutLink abc hidingLogout">Logout</a>
+
+        <!-- <span id="logout" class="logoutLink abc hidingLogout">Logout</span> -->
+
+        <a id="login" class="login" style="display: none;">Login</a>
+        <div class="threeDots abc"  style="display: inline;"><svg style="margin-top: 0.3rem;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+          </svg>
+          <div class="redirection" style="display: none;">
+            <div class="profilePage"><a href="./index.html" style="text-decoration: none;">DashBoard</a><br></div>
+            <div class="allBlogsPage"> <a href="./allposts.html" style="text-decoration: none;">All Blogs</a></div> 
+            <!-- <div class="logoutPage"><a href="" style="text-decoration: none;" class="logoutRedirectDashboard" >Logout</a></div> -->
+            <div class="logoutPage" style="display: none;"><a class="logoutRedirect abc" style="text-decoration: none;" >Logout</a></div>
+
+        </div></div>
         </div>
     </div>
     <div class="profileHeading">
     <h1>Profile</h1>
     <!-- <a href="./allposts.html" style="text-decoration: none;">See All Blogs</h1> -->
-        <span  style="text-decoration: none;" id="mySpan">See All Blogs</span>
-        <span id="dashboard">Dashboard</span>
+    
 
 
 

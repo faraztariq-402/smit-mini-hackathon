@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
 import {getFirestore,addDoc,query,getDocs,deleteDoc,collection,doc, setDoc,getDoc,orderBy,updateDoc,} from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js"; // Add this line
+import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js"; 
 
 const firebaseConfig = {
     apiKey: "AIzaSyCL58d1OV9t2rWDpYJaTK1qM95O9Xpka4Q",
@@ -17,12 +17,30 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 let myUser;
+const redirection = document.querySelector(".redirection");
+const threeDots = document.querySelector(".threeDots");
 let welcome = document.querySelector("#welcome")
 let logout = document.querySelector("#logout");
+let login = document.querySelector("#login");
+const logoutRedirect = document.querySelector(".logoutRedirect");
+const header = document.querySelector(".header");
+
+
+
 userSpan.addEventListener("click",()=>{
     window.location.href = "./profile.html"
 })
+// document.addEventListener("click", ()=>{
+//   if(redirection.style.display = 'block'){
+//     setTimeout(()=>{
+//      document.addEventListener("click",()=>{
+//        redirection.style.display = 'none'
 
+//      })
+
+//     })
+//   }
+// })
 // Get the current hour of the day
 const currentHour = new Date().getHours();
 
@@ -34,11 +52,22 @@ if (currentHour >= 6 && currentHour < 12) {
 } else {
   welcome.textContent = "Good Evening Readers!";
 }
+
+threeDots.addEventListener("click", ()=>{
+  console.log("Three dots clicked");
+  console.log("redirection.style.display:", redirection.style.display);
+  if(redirection.style.display === 'none'){
+    redirection.style.display = 'block'
+  }else{
+    redirection.style.display = 'none'
+  }
+})
+
 let allPosts = document.querySelector("#allPosts")
 onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user.email)
-      
+      login.style.display = 'none'
       myUser = user;
     //   let remove@gmail
     // .textContent
@@ -62,10 +91,14 @@ onAuthStateChanged(auth, (user) => {
       //   }
       // });
     } else {
-       userLogin.style.display = "block"
+      //  userLogin.style.display = "block"
        // User is not signed in, disable post creation
-       postButton.style.display = "none";
-       userLogin.addEventListener("click", ()=>{
+       console.log(user)
+      logout.style.display = 'none'
+      login.style.cursor = 'pointer'
+      header.style.padding = "0 2rem";
+      threeDots.style.display = 'none'
+       login.addEventListener("click", ()=>{
          window.location.href = "../index.html"
   
        })
@@ -121,6 +154,9 @@ let getAllPosts = async () => {
     console.log(postOwnerId)
     window.location.href = `./user.html?userId=${postOwnerId}`;
   });
+  if(!myUser){
+    seeMore.style.display = 'none'
+  }
           name.textContent = postData.ownerName;
           const timestamp = postData.timestamp.toDate();
   
@@ -149,6 +185,7 @@ let getAllPosts = async () => {
           postTitleAndTime.appendChild(time);
           postCard.appendChild(text);
           postCard.appendChild(seeMore)
+
   
           // Attach edit and delete event listeners
   
@@ -163,6 +200,27 @@ let getAllPosts = async () => {
 
   getAllPosts()
   logout.addEventListener("click", () => {
+    signOut(auth)
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Sign Out Successful',
+          text: 'You have been signed out successfully.',
+        }).then(() => {
+          console.log("User signed out successfully");
+          window.location.href = "../index.html";
+        });
+      })
+      .catch((error) => {
+        console.error("Error signing out: ", error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Sign Out Error',
+          text: 'An error occurred while signing out.',
+        });
+      });
+  });
+  logoutRedirect.addEventListener("click", () => {
     signOut(auth)
       .then(() => {
         Swal.fire({
